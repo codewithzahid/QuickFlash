@@ -1,5 +1,5 @@
 ;
-; Installation INF for the STMicroelectronics STLINK for Windows XP SP2 or later.
+; Installation INF for the STMicroelectronics STLINK (debug and usb loader interfaces) for Windows XP SP2 or later.
 ;
 
 [Version]
@@ -9,7 +9,7 @@ ClassGUID = {88BAE032-5A81-49f0-BC3D-A4FF138216D6}
 Provider  = %ManufacturerName%
 CatalogFile.NTx86  = STLinkDbgWinUSB_x86.cat
 CatalogFile.NTAMD64 = STLinkDbgWinUSB_x64.cat
-DriverVer=01/21/2013,1.01
+DriverVer=04/01/2021,2.02
 
 ; ========== Manufacturer/Models sections ===========
 
@@ -20,13 +20,29 @@ DriverVer=01/21/2013,1.01
 %DeviceName% =USB_Install, USB\VID_0483&PID_3748
 %DeviceName% =USB_Install, USB\VID_0483&PID_374A&MI_00
 %DeviceName% =USB_Install, USB\VID_0483&PID_374B&MI_00
+%DeviceName% =USB_Install, USB\VID_0483&PID_374E&MI_00
+%DeviceName% =USB_Install, USB\VID_0483&PID_374F&MI_00
+%DeviceName% =USB_Install, USB\VID_0483&PID_3752&MI_00
+%DeviceName% =USB_Install, USB\VID_0483&PID_3753&MI_00
+%DeviceName% =USB_Install, USB\VID_0483&PID_3754&MI_00
+%DeviceName% =USB_Install, USB\VID_0483&PID_3757&MI_00
 %DeviceNameRW% =USB_InstallRW, USB\VID_0483&PID_374A&MI_01
+%DeviceNameUsbLoader% =USB_Install, USB\VID_0483&PID_374D
+%DeviceNameUsbLoader% =USB_Install, USB\VID_0483&PID_3755
 
 [Standard.NTamd64]
 %DeviceName% =USB_Install, USB\VID_0483&PID_3748
 %DeviceName% =USB_Install, USB\VID_0483&PID_374A&MI_00
 %DeviceName% =USB_Install, USB\VID_0483&PID_374B&MI_00
+%DeviceName% =USB_Install, USB\VID_0483&PID_374E&MI_00
+%DeviceName% =USB_Install, USB\VID_0483&PID_374F&MI_00
+%DeviceName% =USB_Install, USB\VID_0483&PID_3752&MI_00
+%DeviceName% =USB_Install, USB\VID_0483&PID_3753&MI_00
+%DeviceName% =USB_Install, USB\VID_0483&PID_3754&MI_00
+%DeviceName% =USB_Install, USB\VID_0483&PID_3757&MI_00
 %DeviceNameRW% =USB_InstallRW, USB\VID_0483&PID_374A&MI_01
+%DeviceNameUsbLoader% =USB_Install, USB\VID_0483&PID_374D
+%DeviceNameUsbLoader% =USB_Install, USB\VID_0483&PID_3755
 
 ; ========== Class definition ===========
 
@@ -126,6 +142,7 @@ ManufacturerName="STMicroelectronics"
 ClassName="Universal Serial Bus devices"
 DeviceName="STMicroelectronics STLink dongle"
 DeviceNameRW="STMicroelectronics STLink dongle RW"
+DeviceNameUsbLoader="STMicroelectronics STLink USB Loader"
 WinUSB_SvcDesc="WinUSB Driver for STLink"
 REG_MULTI_SZ = 0x00010000
 DISK_NAME="WinUSB coinstallers sources on disk"

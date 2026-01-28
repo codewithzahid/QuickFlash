@@ -10,7 +10,7 @@ ClassGUID = {4D36E978-E325-11CE-BFC1-08002BE10318}
 Provider  = %ManufacturerName%
 CatalogFile.NTx86  = STLinkVCP_x86.cat
 CatalogFile.NTAMD64 = STLinkVCP_x64.cat
-DriverVer=12/10/2013,1.0
+DriverVer=04/01/2021,2.02
 
 ; ========== Manufacturer/Models sections ===========
 
@@ -21,23 +21,26 @@ DriverVer=12/10/2013,1.0
 [Standard.NTx86]
 %DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_374A&MI_02
 %DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_374B&MI_02
-%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_374C&MI_01
+%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_374E&MI_02
+%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_374F&MI_02
+%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_3752&MI_01
+%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_3753&MI_01
+%DeviceNameVCP2% =USB_InstallVCP, USB\VID_0483&PID_3753&MI_04
+%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_3754&MI_01
+%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_3757&MI_01
+%DeviceNameVCP_PWR% =USB_InstallVCP, USB\VID_0483&PID_3757&MI_04
 
 [Standard.NTamd64]
 %DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_374A&MI_02
 %DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_374B&MI_02
-%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_374C&MI_01
-
-; ========== Class definition ===========
-
-[ClassInstall32]
-AddReg = ClassInstall_AddReg
-
-[ClassInstall_AddReg]
-HKR,,,,%ClassName%
-HKR,,NoInstallClass,,1
-HKR,,IconPath,%REG_MULTI_SZ%,"%systemroot%\system32\setupapi.dll,-20"
-HKR,,LowerLogoVersion,,5.2
+%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_374E&MI_02
+%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_374F&MI_02
+%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_3752&MI_01
+%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_3753&MI_01
+%DeviceNameVCP2% =USB_InstallVCP, USB\VID_0483&PID_3753&MI_04
+%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_3754&MI_01
+%DeviceNameVCP% =USB_InstallVCP, USB\VID_0483&PID_3757&MI_01
+%DeviceNameVCP_PWR% =USB_InstallVCP, USB\VID_0483&PID_3757&MI_04
 
 ; =================== Installation ===================
 
@@ -69,6 +72,8 @@ ServiceBinary=%12%\usbser.sys
 
 [Strings]
 ManufacturerName="STMicroelectronics"
-ClassName="Universal Serial Bus devices"
+;ClassName="Universal Serial Bus devices"
 DeviceNameVCP="STMicroelectronics STLink Virtual COM Port"
+DeviceNameVCP2="STMicroelectronics STLink Virtual COM Port 2"
+DeviceNameVCP_PWR="STMicroelectronics STLink Virtual COM Port PWR"
 REG_MULTI_SZ = 0x00010000
